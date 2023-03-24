@@ -1,0 +1,35 @@
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	row-gap: clamp(15px, 1.2vw, 22px);
+	column-gap: clamp(15px, 1.5vw, 28px);
+	height: inherit;
+}
+
+.grid-container .grid-cell {
+	border: 1px solid;
+	border-radius: 22px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.grid-container .grid-cell div img {
+	width: 100%; /* or any custom size */
+	height: 100%;
+	object-fit: contain;
+}
+
+.grid-container .grid-cell div {
+    width: 100%;
+    height: clamp(19vh, 80%, 23vh);
+}
+
+.grid-container .grid-cell p {
+    text-align: center;
+    margin: clamp(5px, 1vh, 15px) 0px;
+    font-size: clamp(15px, 1.5vw, 30px);
+    font-weight: 600;
+    text-transform: capitalize;
+}
