@@ -13,6 +13,7 @@
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
+    cursor: pointer;
 }
 
 .grid-container .grid-cell div img {

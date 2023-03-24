@@ -5,9 +5,10 @@ import { fruits as initFruitsList } from "./Data/fruitsData";
 
 function App() {
 	const [fruits, setFruits] = useState(initFruitsList);
+
 	return (
 		<div className="App">
-			<MainGame fruits={fruits}/>
+			<MainGame fruits={fruits} />
 		</div>
 	);
 }

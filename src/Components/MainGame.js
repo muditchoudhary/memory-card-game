@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Styles/MainGame.css";
 import CardGrid from "./CardGrid";
+import { fruitImageClickCount } from "../Data/fruitsData";
 
 // Constant Variables
 // Size of randomly generated fruits array
@@ -18,6 +19,8 @@ const MainGame = (props) => {
 	const [randomFruits, setRandomFruits] = useState(
 		makeRandomArr(props.fruits, props.fruits.length, K)
 	);
+	const [imageClickCount, setImageClickCount] =
+		useState(fruitImageClickCount);
 	return (
 		<div className="Main-Game">
 			<div className="header">
@@ -35,7 +38,15 @@ const MainGame = (props) => {
 				</div>
 			</div>
 			<div className="box">
-				<CardGrid randomFruits={randomFruits} />
+				<CardGrid
+					randomFruits={randomFruits}
+                    setRandomFruits={setRandomFruits}
+					imageClickCount={imageClickCount}
+					setImageClickCount={setImageClickCount}
+                    makeRandomArr={makeRandomArr}
+                    fruits={props.fruits}
+                    K={K}
+				/>
 			</div>
 		</div>
 	);
