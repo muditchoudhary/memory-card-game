@@ -11,11 +11,18 @@ const CardGrid = (props) => {
 				...props.imageClickCount,
 				[fruitName]: (props.imageClickCount[fruitName] += 1),
 			});
-			// Set the new random fruits array to new random array
 
+			// Set the random fruits array to new random array
 			props.setRandomFruits(
-				props.makeRandomArr(props.fruits, props.fruits.length, props.K)
+				props.makeRandomArr(
+					props.fruits,
+					props.fruits.length,
+					props.randomArrLen
+				)
 			);
+
+			// Increment Score
+			props.setPlayerScore((score) => score + 1);
 		} else {
 			console.log("game over!!");
 		}

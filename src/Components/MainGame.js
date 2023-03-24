@@ -5,7 +5,7 @@ import { fruitImageClickCount } from "../Data/fruitsData";
 
 // Constant Variables
 // Size of randomly generated fruits array
-const K = 12;
+const RANDOM_ARR_LEN = 12;
 
 const makeRandomArr = (mainArr, N, K) => {
 	let randomFruits = [];
@@ -17,16 +17,18 @@ const makeRandomArr = (mainArr, N, K) => {
 
 const MainGame = (props) => {
 	const [randomFruits, setRandomFruits] = useState(
-		makeRandomArr(props.fruits, props.fruits.length, K)
+		makeRandomArr(props.fruits, props.fruits.length, RANDOM_ARR_LEN)
 	);
 	const [imageClickCount, setImageClickCount] =
 		useState(fruitImageClickCount);
+
+	const [playerScore, setPlayerScore] = useState(0);
 	return (
 		<div className="Main-Game">
 			<div className="header">
 				<div className="hdr-child-first">
 					<p>Your Score:</p>
-					<p>0</p>
+					<p>{playerScore}</p>
 				</div>
 				<div className="hdr-child-second">
 					<p>Memory Game</p>
@@ -40,12 +42,14 @@ const MainGame = (props) => {
 			<div className="box">
 				<CardGrid
 					randomFruits={randomFruits}
-                    setRandomFruits={setRandomFruits}
+					setRandomFruits={setRandomFruits}
 					imageClickCount={imageClickCount}
 					setImageClickCount={setImageClickCount}
-                    makeRandomArr={makeRandomArr}
-                    fruits={props.fruits}
-                    K={K}
+					makeRandomArr={makeRandomArr}
+					fruits={props.fruits}
+					randomArrLen={RANDOM_ARR_LEN}
+                    playerScore={playerScore}
+                    setPlayerScore={setPlayerScore}
 				/>
 			</div>
 		</div>
