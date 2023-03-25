@@ -1,7 +1,6 @@
 import React from "react";
 import "../Styles/CardGrid.css";
 import fruitImages from "../Assets/Images";
-import { v4 as uuidv4 } from "uuid";
 
 const CardGrid = (props) => {
 	const clickOnFruit = (fruitName) => {
@@ -30,19 +29,22 @@ const CardGrid = (props) => {
 
 	return (
 		<div className="grid-container">
-			{props.randomFruits.map((fruit) => {
+			{props.randomFruits.map((fruitObj) => {
 				return (
 					<div
 						className="grid-cell"
-						key={uuidv4()}
+						key={fruitObj.uniqueId}
 						onClick={(e) => {
 							clickOnFruit(e.target.alt);
 						}}
 					>
 						<div>
-							<img src={fruitImages[fruit]} alt={fruit} />
+							<img
+								src={fruitImages[fruitObj.fruitName]}
+								alt={fruitObj.fruitName}
+							/>
 						</div>
-						<p>{fruit.replace("_", " ")}</p>
+						<p>{fruitObj.fruitName.replace("_", " ")}</p>
 					</div>
 				);
 			})}

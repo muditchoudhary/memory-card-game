@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Styles/MainGame.css";
 import CardGrid from "./CardGrid";
 import { fruitImageClickCount } from "../Data/fruitsData";
+import { v4 as uuidv4 } from "uuid";
 
 // Constant Variables
 // Size of randomly generated fruits array
@@ -10,7 +11,10 @@ const RANDOM_ARR_LEN = 12;
 const makeRandomArr = (mainArr, N, K) => {
 	let randomFruits = [];
 	for (let i = 0; i < K; i++) {
-		randomFruits[i] = mainArr[Math.floor(Math.random() * N)];
+		randomFruits[i] = {
+			fruitName: mainArr[Math.floor(Math.random() * N)],
+			uniqueId: uuidv4(),
+		};
 	}
 	return randomFruits;
 };
@@ -48,8 +52,8 @@ const MainGame = (props) => {
 					makeRandomArr={makeRandomArr}
 					fruits={props.fruits}
 					randomArrLen={RANDOM_ARR_LEN}
-                    playerScore={playerScore}
-                    setPlayerScore={setPlayerScore}
+					playerScore={playerScore}
+					setPlayerScore={setPlayerScore}
 				/>
 			</div>
 		</div>
