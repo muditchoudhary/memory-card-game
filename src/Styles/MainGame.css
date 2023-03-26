@@ -1,16 +1,31 @@
 .header {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .header .hdr-child-first,
 .header .her-child-third {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
+}
+
+.header .hdr-child-first p,
+.header .hdr-child-third p {
+    font-size: clamp(18px, 1.2vw, 38px);
+    margin: clamp(5px, 1vh, 15px);
+    font-weight: 600;
+    color: #f6ad2b;
+}
+
+.hdr-child-second p {
+    font-size: clamp(50px, 4vw, 80px);
+    font-weight: bolder;
+    margin: clamp(14px, 2vh, 44px);
+    color: white;
 }
 
 .box {
-    border: 2px solid red;
     padding: clamp(15px, 1.2vw, 22px);
     height: clamp(535px, 45vw, 1150px);
+    background: #f6ad2b;
 }

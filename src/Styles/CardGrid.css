@@ -8,12 +8,14 @@
 }
 
 .grid-container .grid-cell {
-	border: 1px solid;
-	border-radius: 22px;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
+    border: 1px solid;
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+    color: #f6ad2b;
+    background: #100f12;
 }
 
 .grid-container .grid-cell div img {

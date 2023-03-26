@@ -12,7 +12,7 @@ const MainGame = (props) => {
 				<div className="hdr-child-second">
 					<p>Memory Game</p>
 				</div>
-				<div className="her-child-third">
+				<div className="hdr-child-third">
 					<p>Best Score:</p>
 					<p>{props.bestScore}</p>
 				</div>
