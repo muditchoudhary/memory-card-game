@@ -2,6 +2,11 @@ import React from "react";
 import "../Styles/CardGrid.css";
 import fruitImages from "../Assets/Images";
 
+const isBestscore = (bestScore, currentScore) => {
+	if (currentScore > bestScore) return true;
+	return false;
+};
+
 const CardGrid = (props) => {
 	const clickOnFruit = (fruitName) => {
 		if (props.imageClickCount[fruitName] < 1) {
@@ -23,7 +28,10 @@ const CardGrid = (props) => {
 			// Increment Score
 			props.setPlayerScore((score) => score + 1);
 		} else {
-			console.log("game over!!");
+			document.querySelector(".gameover-overlay").classList.add("active");
+			if (isBestscore(props.bestScore, props.playerScore)) {
+				props.setBestScore(props.playerScore);
+			}
 		}
 	};
 
