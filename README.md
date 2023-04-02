@@ -6,6 +6,8 @@ This is a project in theodinproject. The purpose of this project is to practice 
 
 ![Sample Image](./Sample/Sample-img.png)
 
+https://user-images.githubusercontent.com/74391865/229360833-83747d0d-ec93-4a96-a717-ca38e0017df2.mp4
+
 # What did I learn?
 
 -   How to use functional components.
